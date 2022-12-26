@@ -2,7 +2,7 @@
   min-width: 1100px;
   max-width: 1600px;
   margin: 0 auto 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif; /*comment from reviewer to correctly assign fonts*/
   font-size: 16px;
   line-height: 20px;
 }
@@ -37,6 +37,7 @@
   display: flex;
   align-items: center;
   column-gap: 20px;
+  margin-bottom: 0px; /*comment from reviewer added to reset bottom margin to 0 as no value in brief*/
 }
 
 .nav__link {
@@ -71,7 +72,7 @@
   max-width: 636px;
   top: 135px;
   right: 20px;
-  z-index: 1;
+  z-index: -1; /*adjusted based on reviewer feedback so image does not cover text when resizing browser window*/
 }
 
 .header__footer {
@@ -123,7 +124,8 @@
 }
 
 /* Add the CSS rule for your new class here. Make sure to place it before .card: parents should precede their children */
-.staff__card-format {
+.staff__cards {
+  padding: 0; /*reviewer comment to remove default padding*/
   margin: 68px auto 0;
   max-width: 760px;
   display: flex;
@@ -140,7 +142,6 @@
   width: 360px;
   height: 420px;
   list-style-type: none;
-  margin: 20px auto;
 }
 
 .card__content {
@@ -342,12 +343,12 @@
   /* Add styles */
   display: flex;
   justify-content: center;
+  column-gap: 40px; /*reviewer comment moved from .step to container which is membership__steps*/
 }
 
 .step {
   /* Add styles */
   flex-basis: 220px;
-  column-gap: 40px;
 }
 
 .step__title {
@@ -364,8 +365,7 @@
 }
 
 .step__description {
-  margin: 10px 0 0;
-  max-width: 200px;
+  margin: 10px 0 0; /*removed max-width per review comments*/
 }
 
 .about {
@@ -399,7 +399,7 @@
 }
 
 .about__paragraph {
-  margin-bottom: 0 auto 32px;
+  margin-bottom: 32px; /*corrected to one value from review comments*/
 }
 
 .about__circle {
@@ -413,7 +413,6 @@
 }
 
 .footer {
-  min-height: 224px;
   padding: 60px 102px 60px 80px;
   box-sizing: border-box;
   background-color: #1f1f1f;
@@ -421,6 +420,7 @@
 }
 
 .footer__columns {
+  min-height: 224px; /*moved from footer per reviewer comments*/
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -432,7 +432,7 @@
 }
 
 .footer__column_content_social {
-  margin-right: 102px;
+  margin-right: 0px; /*changed to 0 per reviewer comments*/
 }
 
 .footer__logo {
@@ -452,6 +452,7 @@
 }
 
 .footer__column-heading {
+  margin-top: 0px; /*reviewer comment to reset to default value as padding already in place at 60px*/
   margin-bottom: 20px;
 }
 
@@ -461,6 +462,9 @@
   line-height: 20px;
   text-decoration: none;
   text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /*space between is closer match to gaps in brief*/
 }
 
 .footer__column-link:hover {
@@ -468,10 +472,12 @@
 }
 
 .footer__social-icon {
-  position: absolute;
+  /*reviewer comment suggests margins/flexbox to adjust not position:absolute --> added to footer__column-link*/
   width: 16px;
   height: 16px;
 }
 
 .footer__copyright {
+  margin-bottom: 0px; /*reviewer comment to set margins to default - spacing already assigned in padding*/
+  margin-left: 0px; /*already assigned in padding*/
 }
