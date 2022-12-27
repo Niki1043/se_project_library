@@ -399,7 +399,12 @@
 }
 
 .about__paragraph {
+  margin-top: 0px; /*corrected default margin per review comments*/
   margin-bottom: 32px; /*corrected to one value from review comments*/
+}
+/*add pseudoclass per reviewer comments*/
+.about__paragrah:last-of-type {
+  margin-bottom: 0px;
 }
 
 .about__circle {
@@ -480,4 +485,5 @@
 .footer__copyright {
   margin-bottom: 0px; /*reviewer comment to set margins to default - spacing already assigned in padding*/
   margin-left: 0px; /*already assigned in padding*/
+  margin-top: 0px; /*reviewer comment to rest default top margin*/
 }
